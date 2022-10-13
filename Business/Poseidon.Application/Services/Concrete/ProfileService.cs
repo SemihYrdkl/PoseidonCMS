@@ -1,6 +1,7 @@
 ﻿using Poseidon.Application.Dtos;
 using Poseidon.Application.Services.Interface;
 using Poseidon.Domain.Entities;
+using Poseidon.Domain.Repositories;
 using Poseidon.Infrastructure.Data.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,29 @@ namespace Poseidon.Application.Services.Concrete
 {
     public class ProfileService : IProfileService
     {
-        private readonly RepositoryBase<ProfileDto> _repository = new RepositoryBase<ProfileDto>();
-        public void ProfileAdded(ProfileDto profileModel)
+        private readonly IBaseRepository<Profile> _baseRepository;
+        public ProfileService(IBaseRepository<Profile> baseRepository)
         {
-            _repository.Add(profileModel);
+            _baseRepository = baseRepository;
         }
 
-        public IList<ProfileDto> ProfileList()
+        //private readonly RepositoryBase<ProfileDto> _repository = new RepositoryBase<ProfileDto>();
+        public void ProfileAdded(ProfileDto profileModel)
         {
-            return _repository.GetList();  
+            Profile profile = new Profile() { 
+            Id = profileModel.Id,
+            CompanyName = profileModel.CompanyName,
+            CompanyInfo = profileModel.CompanyInfo,
+            Email = profileModel.Email,
+            PhoneNumber = profileModel.PhoneNumber,
+            Picture = profileModel.Picture
+            };
+            _baseRepository.Insert(profile);
         }
+
+        //public IList<ProfileDto> ProfileList()
+        //{
+        //    return _repository.GetList();  
+        //}
     }
 }

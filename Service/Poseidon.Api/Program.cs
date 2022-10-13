@@ -1,9 +1,16 @@
+using Poseidon.Application.Services.Concrete;
+using Poseidon.Application.Services.Interface;
+using Poseidon.Domain.Repositories;
+using Poseidon.Infrastructure.Data.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddScoped<IProfileService, ProfileService>();
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(RepositoryBase<>));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

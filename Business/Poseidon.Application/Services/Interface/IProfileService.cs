@@ -10,6 +10,6 @@ namespace Poseidon.Application.Services.Interface
     public interface IProfileService
     {
         void ProfileAdded(ProfileDto profileModel);
-        IList<ProfileDto> ProfileList();
+        //IList<ProfileDto> ProfileList();
     }
 }

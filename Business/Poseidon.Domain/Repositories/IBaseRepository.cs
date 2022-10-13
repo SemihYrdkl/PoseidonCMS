@@ -8,7 +8,7 @@ namespace Poseidon.Domain.Repositories
 {
     public interface IBaseRepository<T>
     {
-        void Add(T entities);
+        void Insert(T entities);
         void Update(T entities);
         void Delete(T entities);
         T GetByID(int id);

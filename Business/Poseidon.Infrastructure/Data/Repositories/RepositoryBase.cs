@@ -14,27 +14,6 @@ namespace Poseidon.Infrastructure.Data.Repositories
         {
 
         }
-        public void Add(T entities)
-        {
-            using (ISession _session = NHContext.SessionOpen())
-            {
-                using (ITransaction _transaction = _session.BeginTransaction())
-                {
-                    try
-                    {
-                        _session.Save(entities);
-                        _transaction.Commit();
-                    }
-                    catch (System.Exception ex)
-                    {
-                        if (!_transaction.WasCommitted)
-                            _transaction.Rollback();
-
-                        throw new Exception("Insert Hata: "+ex.Message);
-                    }
-                }
-            }
-        }
 
         public void Delete(T entities)
         {
@@ -71,6 +50,28 @@ namespace Poseidon.Infrastructure.Data.Repositories
             using (ISession _session = NHContext.SessionOpen())
             {
                 return _session.Query<T>().ToList();
+            }
+        }
+
+        public void Insert(T entities)
+        {
+            using (ISession _session = NHContext.SessionOpen())
+            {
+                using (ITransaction _transaction = _session.BeginTransaction())
+                {
+                    try
+                    {
+                        _session.Save(entities);
+                        _transaction.Commit();
+                    }
+                    catch (System.Exception ex)
+                    {
+                        if (!_transaction.WasCommitted)
+                            _transaction.Rollback();
+
+                        throw new Exception("Insert Hata: " + ex.Message);
+                    }
+                }
             }
         }
 

@@ -1,3 +1,6 @@
+using Poseidon.Application.Services.Concrete;
+using Poseidon.Application.Services.Interface;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

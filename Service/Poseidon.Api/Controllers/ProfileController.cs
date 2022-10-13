@@ -16,13 +16,20 @@ namespace Poseidon.Api.Controllers
             _profileService = profileService;
         }
 
-        [HttpGet(template: "getall")]
-        public IActionResult GetList()
+        [HttpPost]
+        public ActionResult Create(ProfileDto profile)
         {
-            var result = _profileService.ProfileList();
-
-            return Ok(result);
+            _profileService.ProfileAdded(profile);
+            return Ok();
         }
+
+        //[HttpGet(template: "getall")]
+        //public IActionResult GetList()
+        //{
+        //    var result = _profileService.ProfileList();
+
+        //    return Ok(result);
+        //}
 
     }
 }

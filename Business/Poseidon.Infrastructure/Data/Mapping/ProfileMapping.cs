@@ -19,8 +19,6 @@ namespace Poseidon.Infrastructure.Data.Mapping
             Map(p => p.Email).Not.Nullable();
             Map(p => p.PhoneNumber).Not.Nullable();
             Map(p => p.Picture).Not.Nullable();
-
-
         }
     }
 }
