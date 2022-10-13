@@ -2,26 +2,39 @@
     ViewData["Title"] = "Anasayfa";
 }
 
-<!-- HERO TEXT -->
-							<div class="hero-15-txt white-color">
-						
-								<!-- Title -->
-								<h2 class="h2-lg wow fadeInUp">
-								   Anasayfa
-								</h2>	
-				
-								<!-- Buttons Group -->
-								<div class="btns-group wow fadeInUp">
-									<a href="#features-7" class="btn btn-md btn-orange-red tra-white-hover mr-15">Core Features</a>
-									<a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="video-popup2 btn btn-md btn-transparent ico-20 ico-left">
-										<span class="flaticon-play"></span> See OLMO in Action
-									</a>
-								</div>
+<section id="hero-15" class="bg-scroll hero-section division">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col text-center">
 
-							</div>	<!-- END HERO TEXT -->	
+                <!-- HERO TEXT -->
+                <div class="hero-15-txt white-color">
+
+                    <!-- Title -->
+                    <h2 class="h2-lg wow fadeInUp">
+                        Anasayfa
+                    </h2>
+
+                    <!-- Buttons Group -->
+                    <div class="btns-group wow fadeInUp">
+                        <a href="#features-7" class="btn btn-md btn-orange-red tra-white-hover mr-15">Core Features</a>
+                        <a href="https://www.youtube.com/watch?v=7e90gBu4pas" class="video-popup2 btn btn-md btn-transparent ico-20 ico-left">
+                            <span class="flaticon-play"></span> See OLMO in Action
+                        </a>
+                    </div>
+
+                </div>	<!-- END HERO TEXT -->
+                <!-- HERO IMAGE -->
+                <div class="hero-15-img wow fadeInUp">
+                    <img class="img-fluid" src="images/dashboard-03.png" alt="hero-image">
+                </div>
 
 
-							<!-- HERO IMAGE -->
-							<div class="hero-15-img wow fadeInUp">
-								<img class="img-fluid" src="images/dashboard-04.png" alt="hero-image">						
-							</div>
+            </div>
+        </div>    <!-- End row -->
+    </div>	   <!-- End container -->
+</section>
+
+@await Component.InvokeAsync("ContentBox")
+@await Component.InvokeAsync("ContentLeft")
+@await Component.InvokeAsync("ContentRight")

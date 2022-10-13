@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Poseidon.Infrastructure\Poseidon.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,16 @@
+﻿@using Poseidon.Application.Dtos
+@model ProfileDto
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<form asp-controller="Profile" asp-action="Create" method="post">
+    <div class="row">
+        <input asp-for="CompanyName" type="text" class="form-control" placeholder="Name">
+        <input asp-for="CompanyInfo" type="text" class="form-control" placeholder="About">
+        <input asp-for="Email" type="text" class="form-control" placeholder="email">
+        <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="phone number">
+        <input asp-for="Picture" type="text" class="form-control" placeholder="imagepath">
+        <input type="submit" value="add" class="btn btn-primary" /> 
+    </div>
+</form>
