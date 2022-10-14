@@ -1,7 +1,7 @@
-﻿using Poseidon.Application.Dtos;
-using Poseidon.Application.Services.Interface;
+﻿using Poseidon.Common.Dtos;
 using Poseidon.Domain.Entities;
 using Poseidon.Domain.Repositories;
+using Poseidon.Domain.Services.Interface;
 using Poseidon.Infrastructure.Data.Repositories;
 using System;
 using System.Collections.Generic;

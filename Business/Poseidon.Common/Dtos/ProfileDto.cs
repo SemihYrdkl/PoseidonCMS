@@ -1,12 +1,12 @@
-﻿using Poseidon.Application.Dtos.Base;
-using Poseidon.Application.Dtos.Base.Abstraction;
+﻿using Poseidon.Common.Dtos.Base;
+using Poseidon.Common.Dtos.Base.Abstraction;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poseidon.Application.Dtos
+namespace Poseidon.Common.Dtos
 {
     public class ProfileDto : BaseDto
     {

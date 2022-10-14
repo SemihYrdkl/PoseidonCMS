@@ -1,5 +1,5 @@
 using Poseidon.Application.Services.Concrete;
-using Poseidon.Application.Services.Interface;
+using Poseidon.Domain.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 

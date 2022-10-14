@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Poseidon.Common.Dtos.Base.Abstraction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poseidon.Application.Dtos.Base.Abstraction
+namespace Poseidon.Common.Dtos.Base
 {
-    public interface IBaseDto
+    public class BaseDto : IBaseDto
     {
         public int Id { get; set; }
     }

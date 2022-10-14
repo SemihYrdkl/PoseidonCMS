@@ -1,11 +1,11 @@
-﻿using Poseidon.Application.Dtos;
+﻿using Poseidon.Common.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Poseidon.Application.Services.Interface
+namespace Poseidon.Domain.Services.Interface
 {
     public interface IProfileService
     {

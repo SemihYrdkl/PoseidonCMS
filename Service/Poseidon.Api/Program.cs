@@ -1,6 +1,6 @@
 using Poseidon.Application.Services.Concrete;
-using Poseidon.Application.Services.Interface;
 using Poseidon.Domain.Repositories;
+using Poseidon.Domain.Services.Interface;
 using Poseidon.Infrastructure.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);

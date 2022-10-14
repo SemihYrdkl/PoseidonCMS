@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Poseidon.Application.Dtos;
-using Poseidon.Application.Services.Interface;
+using Poseidon.Common.Dtos;
+using Poseidon.Domain.Services.Interface;
 
 namespace Poseidon.Api.Controllers
 {

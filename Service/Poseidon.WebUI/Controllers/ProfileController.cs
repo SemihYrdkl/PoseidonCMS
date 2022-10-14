@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Poseidon.Application.Services.Interface;
+using Poseidon.Domain.Services.Interface;
 
 namespace Poseidon.WebUI.Controllers
 {
