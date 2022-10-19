@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Poseidon.Common.Dtos
 {
-    public class ProfileDto : BaseDto
+    public class ProfileDto
     {
         public virtual string CompanyName { get; set; }
         public virtual string CompanyInfo { get; set; }

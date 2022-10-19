@@ -12,7 +12,7 @@ namespace Poseidon.Infrastructure.Data.Mapping
     {
         public ProfileMapping()
         {
-            Table("tblProfile");
+            Table("Profile");
             Id(p => p.Id).GeneratedBy.Identity();
             Map(p => p.CompanyName).Not.Nullable();
             Map(p => p.CompanyInfo).Not.Nullable();

@@ -1,7 +1,9 @@
-﻿using Poseidon.Common.Dtos;
+﻿using NHibernate;
+using Poseidon.Common.Dtos;
 using Poseidon.Domain.Entities;
 using Poseidon.Domain.Repositories;
 using Poseidon.Domain.Services.Interface;
+using Poseidon.Infrastructure.Data;
 using Poseidon.Infrastructure.Data.Repositories;
 using System;
 using System.Collections.Generic;
@@ -13,24 +15,43 @@ namespace Poseidon.Application.Services.Concrete
 {
     public class ProfileService : IProfileService
     {
-        private readonly IBaseRepository<Profile> _baseRepository;
-        public ProfileService(IBaseRepository<Profile> baseRepository)
+        //private readonly IBaseRepository<Profile> _baseRepository;
+        public ProfileService(/*IBaseRepository<Profile> baseRepository*/)
         {
-            _baseRepository = baseRepository;
+            //_baseRepository = baseRepository;
         }
 
-        //private readonly RepositoryBase<ProfileDto> _repository = new RepositoryBase<ProfileDto>();
-        public void ProfileAdded(ProfileDto profileModel)
+        public void ProfileAdded(ProfileDto profileDto)
         {
-            Profile profile = new Profile() { 
-            Id = profileModel.Id,
-            CompanyName = profileModel.CompanyName,
-            CompanyInfo = profileModel.CompanyInfo,
-            Email = profileModel.Email,
-            PhoneNumber = profileModel.PhoneNumber,
-            Picture = profileModel.Picture
+            var profile = new Profile
+            {
+                CompanyName = profileDto.CompanyName,
+                CompanyInfo = profileDto.CompanyInfo,
+                Email = profileDto.Email,
+                PhoneNumber = profileDto.PhoneNumber,
+                Picture = profileDto.Picture
             };
-            _baseRepository.Insert(profile);
+
+            ISession session = NHibernateHelper.GetCurrentSession();
+            try
+            {
+                using (ITransaction tx = session.BeginTransaction())
+                {
+                    try
+                    {
+                        session.Save(profile);
+                        tx.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        tx.Rollback();
+                    }
+                }
+            }
+            finally
+            {
+                NHibernateHelper.CloseSession();
+            }
         }
 
         //public IList<ProfileDto> ProfileList()
